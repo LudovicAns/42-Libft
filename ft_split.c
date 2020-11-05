@@ -4,7 +4,7 @@
 static  void    fill_tab(char **tab, char const *s, char c)
 {
     char    *str;
-    int     i;
+    int     i; // test
 
     i = 0;
     while (*s)
