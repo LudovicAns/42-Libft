@@ -1,62 +1,61 @@
 #include "libft.h"
 #include <stdio.h>
 
-static  int     tab_size(char const *s, char c)
+static void fill_tab(char **tab, char const *s, char c)
 {
-    int     i;
-    int     size;
-
-    i = 0;
-    size = 1;
-    while (s[i])
-        size += s[i++] == c && s[i] != c ? 1 : 0;
-    return size;
-}
-
-static  char    **malloc_strs(char **tab, int size, char c, char const *s)
-{
-    int     i;
-    int     j;
-    int     count;
-
-    i = 0;
-    j = 0;
-    while (i < size)
-    {
-        count = 0;
-        while (s[j] != c && s[j++])
-            count++;
-        if (count != 0)
-            tab[i++] = (char *) malloc(count * sizeof(char) + 1);
-        j++;
-    }
-    return (tab);
-}
-
-char            **ft_split(char const *s, char c)
-{
-    char    **tab;
-    int     size;
     int     i;
     int     j;
     int     k;
+    char    *temp;
 
-    size = tab_size(s, c);
-    tab = (char **) malloc(size * sizeof(char *) + 1);
-    tab[size + 1] = NULL;
-    tab = malloc_strs(tab, size, c, s);
     i = 0;
     j = 0;
-
-    while (tab[i] != NULL)
-    {
-        k = 0;
-        while (s[j] != c && s[j])
-            tab[i][k++] = s[j++];
-        if (k != 0)
-            tab[i++][k] = '\0';
+    while (s[j] && s[j] == c)
         j++;
+    while (s[j])
+    {
+        temp = (char *) malloc(500 * sizeof(char));
+        k = 0;
+        while (s[j] && s[j] != c)
+            temp[k++] = s[j++];
+        while(s[j] && s[j] == c)
+            j++;
+        tab[i++] = ft_strdup(temp);
+        free(temp);
     }
+}
 
+static char **malloc_tab(char const *s, char c)
+{
+    char    **tab;
+    int     i;
+    int     row;
+
+    i = 0;
+    row = 1;
+    while (s[i] && s[i] == c)
+        i++;
+    while (s[i])
+    {
+        if (s[i] == c)
+        {
+            while (s[i + 1] && s[i + 1] == c)
+                i++;
+            row++;
+        }
+        i++;
+    }
+    tab = (char **) malloc((row + 1) * sizeof(char *));
+    tab[row] = NULL;
     return (tab);
 }
+
+char    **ft_split(char const *s, char c)
+{
+    char    **splited;
+
+    splited = malloc_tab(s, c);
+    fill_tab(splited, s, c);
+    return (splited);
+}
+   
