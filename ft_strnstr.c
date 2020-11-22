@@ -4,7 +4,7 @@ char    *ft_strnstr(const char	*s1, const char *s2, size_t n)
 {
     char    *a;
     char    *b;
-    int     i;
+    size_t  i;
     int     j;
 
     a = (char *) s1;
