@@ -6,11 +6,11 @@
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:54:31 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:54:33 by lanselin         ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 18:20:50 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
 size_t  ft_strlen(const char *s)
 {
