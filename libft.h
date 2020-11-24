@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isalnum(int);
 size_t	ft_strlen(const char *);
@@ -45,5 +46,7 @@ char	*ft_strtrim(char const *, char const *);
 char	**ft_split(char const *, char);
 char	*ft_strcpy(char *dest, char *src);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
 
 #endif
