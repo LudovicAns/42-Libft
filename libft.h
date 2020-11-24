@@ -43,5 +43,7 @@ char	*ft_substr(char const *, unsigned int, size_t);
 char	*ft_strjoin(char const *, char const *);
 char	*ft_strtrim(char const *, char const *);
 char	**ft_split(char const *, char);
+char	*ft_strcpy(char *dest, char *src);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
