@@ -22,6 +22,7 @@ SRC = ft_atoi.c \
 		ft_isascii.c \
 		ft_isdigit.c \
 		ft_isprint.c \
+		ft_itoa.c \
 		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
@@ -30,11 +31,13 @@ SRC = ft_atoi.c \
 		ft_memset.c \
 		ft_split.c \
 		ft_strchr.c \
+		ft_strcpy.c \ # Not in project.
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
 		ft_strlcpy.c \
 		ft_strlen.c \
+		ft_strmapi.c \
 		ft_strncmp.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
