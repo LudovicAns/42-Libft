@@ -15,6 +15,8 @@ int		ft_atoi(const char *nptr)
 	int		count;
 	int		sign;
 
+	if (!nptr)
+		return (0);
 	count = 0;
 	sign = 1;
 	while (*nptr == ' ' && *nptr)

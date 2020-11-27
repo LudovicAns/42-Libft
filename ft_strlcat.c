@@ -17,6 +17,8 @@ char    *ft_strlcat(char *dest, const char *src, size_t n)
 	int     i;
 	size_t  j;
 
+	if (!dest || !src ||!n)
+		return (0);
 	i = 0;
 	j = 0;
 	while(dest[i])

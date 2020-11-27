@@ -17,6 +17,8 @@ char    *ft_strdup(const char *s)
 	char    *dup;
 	size_t  slen;
 
+	if (!s)
+		return (0);
 	slen = 0;
 	while (s[slen])
 		slen++;
