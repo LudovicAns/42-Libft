@@ -35,7 +35,7 @@ SRC = ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_split.c \
 		ft_strchr.c \
-		ft_strcpy.c \ # Not in project.
+		ft_strcpy.c \
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
