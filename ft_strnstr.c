@@ -19,8 +19,6 @@ char    *ft_strnstr(const char	*s1, const char *s2, size_t n)
 	size_t  i;
 	int     j;
 
-	if (!s1 || !s2 || !n)
-		return (0);
 	a = (char *) s1;
 	b = (char *) s2;
 	i = 0;
@@ -29,7 +27,7 @@ char    *ft_strnstr(const char	*s1, const char *s2, size_t n)
 	while (a[i] && i < n)
 	{
 		j = 0;
-		while (a[i + j] == b[j] && a[i + j] && b[j])
+		while (a[i + j] == b[j] && a[i + j] && i + j < n && b[j])
 		{
 			if (!(b[j + 1]))
 				return(&a[i]);

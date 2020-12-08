@@ -16,8 +16,6 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
 {
 	char temp[n];
 
-	if (!dest || !src || !n)
-		return (NULL);
 	ft_memcpy(temp, src, n);
 	ft_memcpy(dest, temp, n);
 	return (dest);

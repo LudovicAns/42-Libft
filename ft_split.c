@@ -32,6 +32,7 @@ static void	fill_tab(char **tab, char const *s, char c)
 		while(s[j] && s[j] == c)
 			j++;
 		tab[i++] = ft_strdup(temp);
+		temp = NULL;
 		free(temp);
 	}
 }
@@ -65,8 +66,6 @@ char		**ft_split(char const *s, char c)
 {
 	char	**splited;
 
-	if (!s || !c)
-		return (0);
 	splited = malloc_tab(s, c);
 	fill_tab(splited, s, c);
 	return (splited);

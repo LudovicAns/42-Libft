@@ -10,7 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *nptr)
+static int		ft_isspace(int c)
+{
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
+}
+
+int				ft_atoi(const char *nptr)
 {
 	int		count;
 	int		sign;
@@ -19,7 +26,7 @@ int		ft_atoi(const char *nptr)
 		return (0);
 	count = 0;
 	sign = 1;
-	while (*nptr == ' ' && *nptr)
+	while (ft_isspace(*nptr) && *nptr)
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 		sign = (*nptr++ == '-' ? -1 : 1);
