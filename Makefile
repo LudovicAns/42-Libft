@@ -14,6 +14,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJ = $(SRC:.c=.o)
+OBJB = $(SRCB:.c=.o)
 SRC = ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -49,6 +50,16 @@ SRC = ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c
+SRCB = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+
 
 all: $(NAME)
 
@@ -60,9 +71,16 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
+	
+bonus: $(OBJ) $(OBJB)
+	@ar rc $(NAME) $(OBJ) $(OBJB)
+	@echo "archive $(NAME) has been created."
+	@ranlib $(NAME)
+	@echo "archive $(NAME) has been indexed."
 
 clean:
 	@rm -f $(OBJ)
+	@rm -f $(OBJB)
 	@echo "All objects have been deleted."
 
 fclean: clean

@@ -1,0 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/25 16:36:35 by lanselin          #+#    #+#             */
+/*   Updated: 2020/11/25 16:36:35 by lanselin         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*newlst;
+	t_list	*firstelement;
+
+	if (!lst || !f || !del)
+		return NULL;
+	if (!(newlst = ft_lstnew(f(lst->content))))
+		return NULL;
+	lst = lst->next;
+	firstelement = newlst;
+	while (lst)
+	{
+		if (!(newlst->next = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&firstelement, del);
+			return NULL;
+		}
+		newlst = newlst->next;
+		lst = lst->next;
+	}
+	return (firstelement);
+}
