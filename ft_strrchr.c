@@ -16,16 +16,18 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*a;
 	char	*last;
+	char	ccast;
 
 	a = (char *)s;
 	last = NULL;
+	ccast = (char)c;
 	while (*a)
 	{
-		if (c == *a)
+		if (ccast == *a)
 			last = &*a;
 		a++;
 	}
-	if (c == *a)
+	if (ccast == *a)
 		last = &*a;
 	return (&*last);
 }
