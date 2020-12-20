@@ -11,62 +11,77 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static void	fill_tab(char **tab, char const *s, char c)
+static int	nb_rows(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*temp;
+	int	count;
 
-	i = 0;
-	j = 0;
-	while (s[j] && s[j] == c)
-		j++;
-	while (s[j])
+	count = 0;
+	while (*s)
 	{
-		temp = (char *)malloc(500 * sizeof(char));
-		k = 0;
-		while (s[j] && s[j] != c)
-			temp[k++] = s[j++];
-		while (s[j] && s[j] == c)
-			j++;
-		tab[i++] = ft_strdup(temp);
-		temp = NULL;
-		free(temp);
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+		{
+			count++;
+			while (*s && *s != c)
+				s++;
+		}
 	}
+	return (count);
 }
 
-static char	**malloc_tab(char const *s, char c)
+static int	row_size(char const *s, int i, char c)
 {
-	char	**tab;
-	int		i;
-	int		row;
+	int size;
 
-	i = 0;
-	row = 1;
-	while (s[i] && s[i] == c)
-		i++;
-	while (s[i])
+	size = 0;
+	while (s[i] && s[i++] != c)
+		size++;
+	return (size + 1);
+}
+
+static void	*free_rows(char **rows)
+{
+	int size;
+
+	size = 0;
+	while (rows[size])
+		size++;
+	while (size > 0)
 	{
-		if (s[i] == c)
-		{
-			while (s[i + 1] && s[i + 1] == c)
-				i++;
-			row++;
-		}
-		i++;
+		size--;
+		free(rows[size]);
 	}
-	tab = (char **)malloc((row + 1) * sizeof(char *));
-	tab[row] = NULL;
-	return (tab);
+	free(rows);
+	return ((void *)0);
 }
 
 char		**ft_split(char const *s, char c)
 {
-	char	**splited;
+	char	**rows;
+	int		i[3];
 
-	splited = malloc_tab(s, c);
-	fill_tab(splited, s, c);
-	return (splited);
+	if (!s || !(rows = (char **)malloc(sizeof(char *) * (nb_rows(s, c) + 1))))
+		return (NULL);
+	i[0] = 0;
+	i[1] = 0;
+	while (s[i[0]])
+	{
+		if (s[i[0]] != c)
+		{
+			i[2] = 0;
+			if (!(rows[i[1]] = (char *)malloc(sizeof(char) * row_size(s, i[0], c))))
+				return (free_rows(rows));
+			while (s[i[0]] && s[i[0]] != c)
+				rows[i[1]][i[2]++] = s[i[0]++];
+			rows[i[1]][i[2]] = '\0';
+			i[1]++;
+		}
+		else
+			i[0]++;		
+	}
+	rows[i[1]] = NULL;
+	return (rows);
 }
