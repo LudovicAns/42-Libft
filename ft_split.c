@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:53:43 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:53:45 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:11:33 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:16:22 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	fill_tab(char **tab, char const *s, char c)
 		j++;
 	while (s[j])
 	{
-		temp = (char *) malloc(500 * sizeof(char));
+		temp = (char *)malloc(500 * sizeof(char));
 		k = 0;
 		while (s[j] && s[j] != c)
 			temp[k++] = s[j++];
-		while(s[j] && s[j] == c)
+		while (s[j] && s[j] == c)
 			j++;
 		tab[i++] = ft_strdup(temp);
 		temp = NULL;
@@ -57,7 +57,7 @@ static char	**malloc_tab(char const *s, char c)
 		}
 		i++;
 	}
-	tab = (char **) malloc((row + 1) * sizeof(char *));
+	tab = (char **)malloc((row + 1) * sizeof(char *));
 	tab[row] = NULL;
 	return (tab);
 }

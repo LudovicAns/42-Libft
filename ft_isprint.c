@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:40 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:41 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:53:33 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:53:45 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isprint(int c)
+int		ft_isprint(int c)
 {
 	if (!c)
 		return (0);

@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:56 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:57 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:04:31 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:05:16 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char    *a;
-	size_t  i;
+	char	*a;
+	size_t	i;
 
-	a = (char *) s;
+	a = (char *)s;
 	i = 0;
 	while (i < n)
 	{
@@ -25,5 +25,5 @@ void    *ft_memchr(const void *s, int c, size_t n)
 			return (&a[i]);
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }

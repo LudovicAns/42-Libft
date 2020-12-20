@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:05 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:07 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:49:24 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:50:34 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+int		ft_isalnum(int c)
 {
 	if (!c)
 		return (0);
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+			|| (c >= '0' && c <= '9'))
 		return (1);
 	return (0);
 }

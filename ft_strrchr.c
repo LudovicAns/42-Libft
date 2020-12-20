@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:55:00 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:55:02 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:36:11 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:36:28 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char    *a;
-	char    *last;
+	char	*a;
+	char	*last;
 
-	a = (char *) s;
+	a = (char *)s;
 	last = NULL;
 	while (*a)
 	{

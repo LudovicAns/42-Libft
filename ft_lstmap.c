@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:36:35 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/25 16:36:35 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:00:09 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:00:50 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*firstelement;
 
 	if (!lst || !f || !del)
-		return NULL;
+		return (NULL);
 	if (!(newlst = ft_lstnew(f(lst->content))))
-		return NULL;
+		return (NULL);
 	lst = lst->next;
 	firstelement = newlst;
 	while (lst)
@@ -28,7 +28,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!(newlst->next = ft_lstnew(f(lst->content))))
 		{
 			ft_lstclear(&firstelement, del);
-			return NULL;
+			return (NULL);
 		}
 		newlst = newlst->next;
 		lst = lst->next;

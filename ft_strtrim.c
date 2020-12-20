@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:55:18 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:55:19 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:37:07 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:38:10 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  isset(char c, char const *set)
+static int	isset(char c, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -26,7 +26,7 @@ static int  isset(char c, char const *set)
 	return (0);
 }
 
-static int isend(char const *s, char const *set)
+static int	isend(char const *s, char const *set)
 {
 	while (*s)
 	{
@@ -36,19 +36,19 @@ static int isend(char const *s, char const *set)
 	return (1);
 }
 
-char        *ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	char    *result;
-	int     i;
-	int     j;
+	char	*result;
+	int		i;
+	int		j;
 
-	if (!(result = (char *) malloc(ft_strlen(s1) * sizeof(char) + 1)))
+	if (!(result = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1)))
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i] && isset(s1[i], set))
 		i++;
-	while (s1[i] && !isend(&s1[i] , set))
+	while (s1[i] && !isend(&s1[i], set))
 		result[j++] = s1[i++];
 	result[j] = '\0';
 	return (result);

@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:54:08 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:54:09 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:29:39 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:30:40 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int     i;
-	int     j;
-	char    *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	if (!s1 || !s2)
 		return (0);
-	if (!(str = (char *) malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char) + 1)))
+	if (!(str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2))
+					* sizeof(char) + 1)))
 		return (NULL);
 	i = 0;
 	while (s1[i])

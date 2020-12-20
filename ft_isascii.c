@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:23 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:25 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:52:14 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:52:24 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isascii(int c)
+int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

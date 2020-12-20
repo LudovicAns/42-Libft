@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:54:15 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:54:17 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:30:58 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:31:24 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	size_t	i;
-	size_t  j;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	while(dest[i] && i < n)
+	while (dest[i] && i < n)
 		i++;
 	while (i + j + 1 < n && src[j])
 	{

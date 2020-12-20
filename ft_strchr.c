@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:53:52 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:53:53 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:16:38 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:27:25 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char    *a;
+	char	*a;
 
-	a = (char *) s;
+	a = (char *)s;
 	while (*a)
 	{
 		if (c == *a)
@@ -24,6 +24,6 @@ char    *ft_strchr(const char *s, int c)
 		a++;
 	}
 	if (c == *a)
-		return (&*a); 
+		return (&*a);
 	return (NULL);
 }

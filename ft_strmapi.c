@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 14:34:55 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/24 14:34:56 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:38:40 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:38:43 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
+	char				*str;
 	unsigned int		i;
 
 	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:51:44 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:51:46 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:45:14 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:45:43 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:54:42 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:54:43 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:34:05 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:34:19 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

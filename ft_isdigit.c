@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:32 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:33 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:52:50 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:53:03 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isdigit(int c)
+int		ft_isdigit(int c)
 {
 	if (!c)
 		return (0);

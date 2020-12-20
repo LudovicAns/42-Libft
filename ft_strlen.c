@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:54:31 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 18:20:50 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:32:13 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:32:26 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

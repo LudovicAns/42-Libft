@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:55:50 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:55:51 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:40:31 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:40:41 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_toupper(int c)
+int		ft_toupper(int c)
 {
 	if (!c)
 		return (0);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:06:12 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/24 16:06:13 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 16:09:53 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 16:10:24 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s || !fd)
-		return;
+		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

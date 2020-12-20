@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 17:52:13 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/23 17:52:15 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:50:51 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:51:05 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalpha(int c)
+int		ft_isalpha(int c)
 {
 	if (!c)
 		return (0);

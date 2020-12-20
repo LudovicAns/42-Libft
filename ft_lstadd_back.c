@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:03:59 by lanselin          #+#    #+#             */
-/*   Updated: 2020/11/25 16:04:01 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2020/12/20 15:55:48 by lanselin          #+#    #+#             */
+/*   Updated: 2020/12/20 15:56:56 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*last;
-	
+
 	if (!alst || !new)
 		return ;
 	if (!*alst)
