@@ -12,26 +12,60 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	numsize(int n)
 {
-	char	*str;
+	int count;
 
-	if (!(str = (char *)malloc(sizeof(char) * 2)))
-		return (NULL);
+	count = 1;
 	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
+		return (11);
 	if (n < 0)
 	{
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		n *= -1;
+		count++;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n >= 0 && n < 10)
+	while (n / 10 >= 1)
 	{
-		str[0] = n + '0';
-		str[1] = '\0';
+		n /= 10;
+		count++;
 	}
-	return (str);
+	return (count);
+}
+
+static int	ft_power(int nb, int power)
+{
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	if (nb == 0 && power == 0)
+		return (1);
+	return (ft_power(nb, power - 1) * nb);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*string;
+	int		i;
+	int		dizaine;
+
+	if (!(string = (char *)malloc((numsize(n) + 1) * sizeof(char))))
+		return (NULL);
+	if (n == -2147483648)
+		return (string = "-2147483648");
+	i = 0;
+	if (n < 0)
+	{
+		string[i++] = '-';
+		n *= -1;
+	}
+	dizaine = ft_power(10, numsize(n) - 1);
+	while (dizaine)
+	{
+		string[i++] = n / dizaine + 48;
+		n = n % dizaine;
+		dizaine /= 10;
+	}
+	string[i] = '\0';
+	return (string);
 }
