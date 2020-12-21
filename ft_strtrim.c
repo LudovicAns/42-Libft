@@ -36,7 +36,7 @@ static int	isend(char const *s, char const *set)
 	return (1);
 }
 
-static int	char_tottrim(char *s, char const *set)
+static int	char_tottrim(char const *s, char const *set)
 {
 	int count;
 
