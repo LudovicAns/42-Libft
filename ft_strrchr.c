@@ -14,20 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*a;
-	char	*last;
-	char	ccast;
+	int i;
+	char ccast;
 
-	a = (char *)s;
-	last = NULL;
-	ccast = (char)c;
-	while (*a)
+	i = 0;
+	while (s[i])
+		i++;
+	ccast = c;
+	while (i >= 0)
 	{
-		if (ccast == *a)
-			last = &*a;
-		a++;
+		if (s[i] == ccast)
+			return ((char *)&s[i]);
+		i--;
 	}
-	if (ccast == *a)
-		last = &*a;
-	return (&*last);
+	return (NULL);
 }
