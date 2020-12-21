@@ -36,13 +36,24 @@ static int	isend(char const *s, char const *set)
 	return (1);
 }
 
+static int	char_tottrim(char *s, char const *set)
+{
+	int count;
+
+	count = 0;
+	while (*s)
+		count += isset(*s++, set) ? 1 : 0;
+	return count;
+}
+
 char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
 	int		i;
 	int		j;
 
-	if (!(result = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1)))
+	if (!(result = (char *)malloc((ft_strlen(s1) - char_tottrim(s1, set))
+			* sizeof(char) + 1)))
 		return (NULL);
 	i = 0;
 	j = 0;
