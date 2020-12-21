@@ -43,7 +43,7 @@ static int	char_tottrim(char const *s, char const *set)
 	count = 0;
 	while (*s)
 		count += isset(*s++, set) ? 1 : 0;
-	return count;
+	return (count);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
