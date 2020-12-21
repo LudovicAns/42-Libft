@@ -6,7 +6,7 @@
 /*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:11:33 by lanselin          #+#    #+#             */
-/*   Updated: 2020/12/20 16:16:22 by lanselin         ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 01:16:48 by lanselin         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ char		**ft_split(char const *s, char c)
 		if (s[i[0]] != c)
 		{
 			i[2] = 0;
-			if (!(rows[i[1]] = (char *)malloc(sizeof(char) * row_size(s, i[0], c))))
+			if (!(rows[i[1]] = (char *)malloc(sizeof(char)
+							* row_size(s, i[0], c))))
 				return (free_rows(rows));
 			while (s[i[0]] && s[i[0]] != c)
 				rows[i[1]][i[2]++] = s[i[0]++];
@@ -79,7 +80,7 @@ char		**ft_split(char const *s, char c)
 			i[1]++;
 		}
 		else
-			i[0]++;		
+			i[0]++;
 	}
 	rows[i[1]] = NULL;
 	return (rows);
