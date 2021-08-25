@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/20 16:40:00 by lanselin          #+#    #+#             */
-/*   Updated: 2020/12/20 16:40:10 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2021/08/25 13:38:51 by lanselin          #+#    #+#             */
+/*   Updated: 2021/08/25 13:38:51 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_isspace(int c)
 {
-	if (!c)
-		return (0);
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	if (c == ' ' || c == '\f'
+		|| c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v')
+		return (1);
+	return (0);
 }

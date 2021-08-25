@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lanselin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/20 16:40:00 by lanselin          #+#    #+#             */
-/*   Updated: 2020/12/20 16:40:10 by lanselin         ###   ########lyon.fr   */
+/*   Created: 2021/08/25 13:43:57 by lanselin          #+#    #+#             */
+/*   Updated: 2021/08/25 13:43:57 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_nbrlen(unsigned long long int number, int base)
 {
-	if (!c)
-		return (0);
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	int	length;
+
+	if (number == 0)
+		return (1);
+	length = 0;
+	while (number > 0)
+	{
+		number /= base;
+		length++;
+	}
+	return (length);
 }
