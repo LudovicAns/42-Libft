@@ -12,53 +12,31 @@
 
 #include "libft.h"
 
-static int	ft_nbrlen(int nb)
+char	*ft_itoa(int n)
 {
-	unsigned int	nui;
-	int				i;
+	char	*s;
+	int		i;
 
-	i = 0;
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
-	{
-		nui = -nb;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	i = ft_nbrlen(ft_abs(n), 10);
+	if (n < 0)
 		i++;
-	}
-	else
-		nui = nb;
-	while (nui)
-	{
-		nui /= 10;
-		i++;
-	}
-	return (i);
-}
-
-char		*ft_itoa(int nb)
-{
-	unsigned int	nui;
-	char			*out;
-	int				i;
-
-	if (!(out = (char *)malloc(sizeof(char) * ft_nbrlen(nb) + 1)))
+	s = (char *)malloc(sizeof(char) * (i + 1));
+	if (!s)
 		return (NULL);
-	i = 0;
-	if (nb < 0)
+	s[i--] = '\0';
+	if (n < 0)
 	{
-		nui = -nb;
-		out[i++] = '-';
+		s[0] = '-';
+		n *= -1;
 	}
-	else
-		nui = nb;
-	i = ft_nbrlen(nb) - 1;
-	while (nui)
+	if (n == 0)
+		s[0] = '0';
+	while (n > 0)
 	{
-		out[i--] = (nui % 10) + '0';
-		nui /= 10;
+		s[i--] = (n % 10) + '0';
+		n /= 10;
 	}
-	if (nb == 0)
-		out[i] = '0';
-	out[ft_nbrlen(nb)] = '\0';
-	return (out);
+	return (s);
 }

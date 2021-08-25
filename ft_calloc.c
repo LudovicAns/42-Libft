@@ -12,17 +12,13 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void *ptr;
+	char	*tab;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
-	ptr = (void *)malloc(nmemb * size);
-	if (ptr)
-		ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	tab = (char *)malloc(size * count);
+	if (!tab)
+		return (NULL);
+	ft_memset(tab, 0, size * count);
+	return (tab);
 }

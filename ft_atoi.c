@@ -10,28 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_isspace(int c)
+long long	ft_atoi(const char *str)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
-			|| c == '\r')
-		return (1);
-	return (0);
-}
+	int				i;
+	int				negative;
+	long long int	number;
 
-int				ft_atoi(const char *nptr)
-{
-	int		count;
-	int		sign;
-
-	if (!nptr)
-		return (0);
-	count = 0;
-	sign = 1;
-	while (ft_isspace(*nptr) && *nptr)
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-		sign = (*nptr++ == '-' ? -1 : 1);
-	while ((*nptr >= '0' && *nptr <= '9') && *nptr)
-		count = count * 10 + (*nptr++ - 48);
-	return (count * sign);
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	negative = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+			negative = -1;
+	}
+	number = 0;
+	while (ft_isdigit(str[i]))
+		number = (number * 10) + (negative * (str[i++] - '0'));
+	return (number);
 }
