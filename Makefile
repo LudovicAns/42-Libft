@@ -67,7 +67,7 @@ SRC			= 	ft_atoi.c \
 				ft_abs.c \
 				ft_isspace.c \
 				ft_nbrlen.c \
-				ft_putstr_color_fd
+				ft_putstr_color_fd.c
 
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
