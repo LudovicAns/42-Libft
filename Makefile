@@ -67,7 +67,8 @@ SRC			= 	ft_atoi.c \
 				ft_abs.c \
 				ft_isspace.c \
 				ft_nbrlen.c \
-				ft_putstr_color_fd.c
+				ft_putstr_color_fd.c \
+				ft_str_isnumeric.c
 
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
@@ -80,6 +81,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ ar rc $(NAME) $(OBJ)
+	@ ranlib $(NAME)
 	@ printf "$(_SUCCESS) Compilation complete.\n"
 
 %.o: %.c
