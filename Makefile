@@ -68,7 +68,8 @@ SRC			= 	ft_atoi.c \
 				ft_isspace.c \
 				ft_nbrlen.c \
 				ft_putstr_color_fd.c \
-				ft_str_isnumeric.c
+				ft_str_isnumeric.c \
+				ft_strjoin_char.c
 
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
