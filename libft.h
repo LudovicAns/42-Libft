@@ -22,6 +22,10 @@
 # define ANSI_COLOR_YELLOW	"\x1b[33m"
 # define ANSI_COLOR_RESET	"\x1b[0m"
 
+# define STDIN	0
+# define STDOUT	1
+# define STDERR	2
+
 typedef struct		s_list
 {
 	void			*content;
