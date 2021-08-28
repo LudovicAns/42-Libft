@@ -60,8 +60,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	if (!(result = (char *)malloc((ft_strlen(s1) - char_tottrim(s1, set))
-			* sizeof(char) + 1)))
+	result = (char *)malloc((ft_strlen(s1) - char_tottrim(s1, set)) * sizeof(char) + 1);
+	if (!result)
 		return (NULL);
 	i = 0;
 	j = 0;

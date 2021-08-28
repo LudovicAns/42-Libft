@@ -12,76 +12,86 @@
 
 #include "libft.h"
 
-static int	nb_rows(char const *s, char c)
+static char	**free_error(char **str)
 {
-	int	count;
+	size_t	i;
 
-	count = 0;
-	while (*s)
+	i = 0;
+	while (str[i])
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s && *s != c)
-		{
-			count++;
-			while (*s && *s != c)
-				s++;
-		}
+		free(str[i]);
+		i++;
 	}
+	free(str);
+	return (NULL);
+}
+
+static size_t	get_dpointer_len(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+	size_t	len;
+
+	i = 0;
+	len = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			if (len != 0)
+				count++;
+			len = 0;
+		}
+		else
+			len++;
+		i++;
+	}
+	if (len)
+		return (count + 1);
 	return (count);
 }
 
-static int	row_size(char const *s, int i, char c)
+static void	create_arr(char const *s, char c, size_t ct, char **ptr)
 {
-	int size;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
-	size = 0;
-	while (s[i] && s[i++] != c)
-		size++;
-	return (size + 1);
-}
-
-static void	*free_rows(char **rows)
-{
-	int size;
-
-	size = 0;
-	while (rows[size])
-		size++;
-	while (size > 0)
+	len = 0;
+	i = 0;
+	j = 0;
+	while (j < ct)
 	{
-		size--;
-		free(rows[size]);
-	}
-	free(rows);
-	return ((void *)0);
-}
-
-char		**ft_split(char const *s, char c)
-{
-	char	**rows;
-	int		i[3];
-
-	if (!s || !(rows = (char **)malloc(sizeof(char *) * (nb_rows(s, c) + 1))))
-		return (NULL);
-	i[0] = 0;
-	i[1] = 0;
-	while (s[i[0]])
-	{
-		if (s[i[0]] != c)
+		if (s[i] == c || s[i] == '\0')
 		{
-			i[2] = 0;
-			if (!(rows[i[1]] = (char *)malloc(sizeof(char)
-							* row_size(s, i[0], c))))
-				return (free_rows(rows));
-			while (s[i[0]] && s[i[0]] != c)
-				rows[i[1]][i[2]++] = s[i[0]++];
-			rows[i[1]][i[2]] = '\0';
-			i[1]++;
+			if (len != 0)
+			{
+				ptr[j] = (char *)malloc(sizeof(char) * (len + 1));
+				if (!ptr[j])
+					free_error(ptr);
+				ft_strlcpy(ptr[j++], s + i - len, len + 1);
+			}
+			len = 0;
 		}
 		else
-			i[0]++;
+			len++;
+		i++;
 	}
-	rows[i[1]] = NULL;
-	return (rows);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dpointer;
+	size_t	len;
+
+	if (!s)
+		return (NULL);
+	len = get_dpointer_len(s, c);
+	dpointer = (char **)malloc(sizeof(char *) * (len + 1));
+	if (!dpointer)
+		return (NULL);
+	create_arr(s, c, len, dpointer);
+	dpointer[len] = NULL;
+	return (dpointer);
 }

@@ -21,10 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	size = ft_strlen(s) - start;
-	size = len > size ? size : len;
+	if (len > size)
+		size = size;
+	else
+		size = len;
 	if (start > ft_strlen(s))
 		size = 0;
-	if (!(out = (char *)malloc(sizeof(char) * size + 1)))
+	out = (char *)malloc(sizeof(char) * size + 1);
+	if (!out)
 		return (NULL);
 	i = 0;
 	while (i < size)
