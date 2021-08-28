@@ -71,6 +71,13 @@ SRC			= 	ft_atoi.c \
 				ft_str_isnumeric.c \
 				ft_strjoin_char.c
 
+# -----  Stack Variables ----- #
+STACK_DIR	=	./stack
+SRC_STACK	=	$(STACK_DIR)/ft_stack_create.c \
+				$(STACK_DIR)/ft_stack_getfirst.c \
+				$(STACK_DIR)/ft_stack_remove.c
+OBJ_STACK	=	$(STACK:.c=.o)
+
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
 YELLOW		=	\e[38;5;226m
@@ -81,7 +88,7 @@ _INFO		=	[$(YELLOW)INFO$(RESET)]
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ ar rc $(NAME) $(OBJ)
+	@ ar rc $(NAME) $(OBJ) $(OBJ_STACK)
 	@ ranlib $(NAME)
 	@ printf "$(_SUCCESS) Compilation complete.\n"
 
@@ -91,7 +98,8 @@ $(NAME): $(OBJ)
 
 clean:
 	@ $(RM) $(OBJ)
-	@ $(RM)  $(OBJB)
+	@ $(RM) $(OBJB)
+	@ $(RM) $(OBJ_STACK)
 	@ printf "$(_INFO) Cleaned all object files\n"
 
 fclean: clean
