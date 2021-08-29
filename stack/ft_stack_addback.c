@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_create.c                                  :+:      :+:    :+:   */
+/*   ft_stack_addback.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 21:56:15 by lanselin          #+#    #+#             */
-/*   Updated: 2021/08/28 21:56:15 by lanselin         ###   ########.fr       */
+/*   Created: 2021/08/29 15:01:54 by lanselin          #+#    #+#             */
+/*   Updated: 2021/08/29 15:01:54 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*	The ft_stack_create function create a new item of s_stack.
+*	The ft_stack_addback function add a new item to the back of a stack.
 *
-*	@param	int integer	-	The integer to put inside first stack item.
+*	@param	t_stack *stack	-	The stack where we'll add the new item.
 *
-*	@result	A new stack or NULL if malloc error.
+*	@param	t_stack *add	-	The new item to add in the stack.
+*
+*	@result	Nothing.
 */
-t_stack	*ft_stack_create(int integer)
+void	ft_stack_addback(t_stack *stack, t_stack *add)
 {
-	t_stack	*stack;
-
-	stack = (t_stack *)malloc(sizeof(t_stack) * 1);
-	if (!stack)
-		return (NULL);
-	stack->integer = integer;
-	stack->previous = NULL;
-	stack->next = NULL;
-	return (stack);
+	if (!stack || !add)
+		return ;
+	while (stack->previous)
+		stack = stack->previous;
+	add->next = stack;
+	stack->previous = add;
 }

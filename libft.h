@@ -84,5 +84,6 @@ int					ft_nbrlen(unsigned long long int number, int base);
 void				ft_putstr_color_fd(char *color, char *s, int fd);
 int					ft_str_isnumeric(char *str);
 char				*ft_strjoin_char(char *str, const char c);
+void				ft_swapint(int *a, int *b);
 
 #endif

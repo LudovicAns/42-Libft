@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_create.c                                  :+:      :+:    :+:   */
+/*   ft_swapint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 21:56:15 by lanselin          #+#    #+#             */
-/*   Updated: 2021/08/28 21:56:15 by lanselin         ###   ########.fr       */
+/*   Created: 2021/08/29 18:41:31 by lanselin          #+#    #+#             */
+/*   Updated: 2021/08/29 18:41:31 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*	The ft_stack_create function create a new item of s_stack.
-*
-*	@param	int integer	-	The integer to put inside first stack item.
-*
-*	@result	A new stack or NULL if malloc error.
+ * The ft_swapint function swaps a and b value.
+ * 
+ * @param	int *a	-	First integer value.
+ * 
+ * @param	int *b	-	Second integer value.
+ * 
+ * @result	Nothing.
 */
-t_stack	*ft_stack_create(int integer)
+void	ft_swapint(int *a, int *b)
 {
-	t_stack	*stack;
+	int	temp;
 
-	stack = (t_stack *)malloc(sizeof(t_stack) * 1);
-	if (!stack)
-		return (NULL);
-	stack->integer = integer;
-	stack->previous = NULL;
-	stack->next = NULL;
-	return (stack);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

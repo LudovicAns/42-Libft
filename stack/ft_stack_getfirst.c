@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/*
+/**
 *	The ft_stack_getfirst function return the first element of a stack.
 *
 *	@param	t_stack *lambda	-	One random item from the stack.

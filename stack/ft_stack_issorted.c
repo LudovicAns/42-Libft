@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_create.c                                  :+:      :+:    :+:   */
+/*   ft_stack_issorted.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 21:56:15 by lanselin          #+#    #+#             */
-/*   Updated: 2021/08/28 21:56:15 by lanselin         ###   ########.fr       */
+/*   Created: 2021/08/29 15:40:53 by lanselin          #+#    #+#             */
+/*   Updated: 2021/08/29 15:40:53 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
-*	The ft_stack_create function create a new item of s_stack.
+*	The ft_stack_issorted function check if a stack is completely sorted.
 *
-*	@param	int integer	-	The integer to put inside first stack item.
+*	@param	t_stack *stack	-	The stack to check.
 *
-*	@result	A new stack or NULL if malloc error.
+*	@return	
+*		-1 if the stack does'nt exist.
+*		0 if the stack is'nt sorted.
+*		1 if the stack is sorted.
 */
-t_stack	*ft_stack_create(int integer)
+int	ft_stack_issorted(t_stack *stack)
 {
-	t_stack	*stack;
-
-	stack = (t_stack *)malloc(sizeof(t_stack) * 1);
 	if (!stack)
-		return (NULL);
-	stack->integer = integer;
-	stack->previous = NULL;
-	stack->next = NULL;
-	return (stack);
+		return (-1);
+	stack = ft_stack_getfirst(stack);
+	while (stack->next)
+	{
+		if (stack->integer > stack->next->integer)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

@@ -69,14 +69,24 @@ SRC			= 	ft_atoi.c \
 				ft_nbrlen.c \
 				ft_putstr_color_fd.c \
 				ft_str_isnumeric.c \
-				ft_strjoin_char.c
+				ft_strjoin_char.c \
+				ft_swapint.c
+INC			=	-I.
 
 # -----  Stack Variables ----- #
 STACK_DIR	=	./stack
 SRC_STACK	=	$(STACK_DIR)/ft_stack_create.c \
 				$(STACK_DIR)/ft_stack_getfirst.c \
-				$(STACK_DIR)/ft_stack_remove.c
-OBJ_STACK	=	$(STACK:.c=.o)
+				$(STACK_DIR)/ft_stack_remove.c \
+				$(STACK_DIR)/ft_stack_addfront.c \
+				$(STACK_DIR)/ft_stack_addback.c \
+				$(STACK_DIR)/ft_stack_getlast.c \
+				$(STACK_DIR)/ft_stack_dispfrom_f.c \
+				$(STACK_DIR)/ft_stack_issorted.c \
+				$(STACK_DIR)/ft_stack_clear.c \
+				$(STACK_DIR)/ft_stack_size.c
+OBJ_STACK	=	$(SRC_STACK:.c=.o)
+INC_STACK	=	-I$(STACK_DIR)
 
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
@@ -87,13 +97,13 @@ _INFO		=	[$(YELLOW)INFO$(RESET)]
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(OBJ_STACK)
 	@ ar rc $(NAME) $(OBJ) $(OBJ_STACK)
 	@ ranlib $(NAME)
 	@ printf "$(_SUCCESS) Compilation complete.\n"
 
 %.o: %.c
-	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) $(INC) $(INC_STACK) -c $< -o $@
 	@ printf '$(_INFO) 🔨 Compiling %s from %s.\n' "$@" "$<"
 
 clean:

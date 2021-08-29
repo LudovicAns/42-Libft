@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/*
+/**
 *	The ft_stack_remove function remove an item of the stack and free the 
 *	memory used by this item. Obviously we made care about their near items 
 *	and replaced each next and previous value to not broke the stack. 
