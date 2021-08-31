@@ -25,8 +25,8 @@ void	ft_stack_addback(t_stack *stack, t_stack *add)
 {
 	if (!stack || !add)
 		return ;
-	while (stack->previous)
-		stack = stack->previous;
-	add->next = stack;
-	stack->previous = add;
+	while (stack->next)
+		stack = stack->next;
+	add->previous = stack;
+	stack->next = add;
 }
