@@ -70,7 +70,8 @@ SRC			= 	ft_atoi.c \
 				ft_putstr_color_fd.c \
 				ft_str_isnumeric.c \
 				ft_strjoin_char.c \
-				ft_swapint.c
+				ft_swapint.c \
+				ft_isnormal_int.c
 INC			=	-I.
 
 # -----  Stack Variables ----- #
@@ -84,7 +85,10 @@ SRC_STACK	=	$(STACK_DIR)/ft_stack_create.c \
 				$(STACK_DIR)/ft_stack_dispfrom_f.c \
 				$(STACK_DIR)/ft_stack_issorted.c \
 				$(STACK_DIR)/ft_stack_clear.c \
-				$(STACK_DIR)/ft_stack_size.c
+				$(STACK_DIR)/ft_stack_size.c \
+				$(STACK_DIR)/ft_stack_has_dup.c \
+				$(STACK_DIR)/ft_stack_duplicate.c \
+				$(STACK_DIR)/ft_stack_count.c
 OBJ_STACK	=	$(SRC_STACK:.c=.o)
 INC_STACK	=	-I$(STACK_DIR)
 

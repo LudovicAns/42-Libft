@@ -85,5 +85,6 @@ void				ft_putstr_color_fd(char *color, char *s, int fd);
 int					ft_str_isnumeric(char *str);
 char				*ft_strjoin_char(char *str, const char c);
 void				ft_swapint(int *a, int *b);
+int					ft_isnormal_int(long long int i);
 
 #endif
