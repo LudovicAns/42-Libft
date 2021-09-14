@@ -21,10 +21,9 @@
  */
 t_stack	*ft_stack_duplicate(t_stack *stack)
 {
-	t_stack	*new_stack;
-	t_stack	*new_item;
+	t_stack *new_stack;
+	t_stack *new_item;
 
-	new_stack = NULL;
 	while (stack)
 	{
 		new_item = ft_stack_create(stack->integer);
@@ -33,7 +32,7 @@ t_stack	*ft_stack_duplicate(t_stack *stack)
 			ft_stack_clear(&new_stack);
 			return (NULL);
 		}
-		ft_stack_addback(new_stack, new_item);
+		ft_stack_addback(&new_stack, new_item);
 		stack = stack->next;
 	}
 	return (new_stack);

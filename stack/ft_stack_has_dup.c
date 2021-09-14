@@ -16,18 +16,21 @@
  * The ft_stack_has_dup function check if the given stack has duplicate
  * integer value.
  * 
- * @param	t_stack *stack	-	Checked stack.
+ * @param	t_stack **stack	-	Checked stack.
  * 
  * @return	0 if stack has not duplicate integer value else 1.
- */
-int	ft_stack_has_dup(t_stack *stack)
+ *
+ */ 
+int	ft_stack_has_dup(t_stack **stack)
 {
-	stack = ft_stack_getfirst(stack);
-	while (stack)
+	t_stack	*node;
+
+	node = ft_stack_getfirst(stack);
+	while (node)
 	{
-		if (ft_stack_count(stack, stack->integer) > 1)
+		if (ft_stack_count(node, node->integer) > 1)
 			return (1);
-		stack = stack->next;
+		node = node->next;
 	}
 	return (0);
 }

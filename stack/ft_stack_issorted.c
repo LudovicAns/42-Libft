@@ -15,23 +15,22 @@
 /**
 *	The ft_stack_issorted function check if a stack is completely sorted.
 *
-*	@param	t_stack *stack	-	The stack to check.
+*	@param	t_stack **stack	-	The stack to check.
 *
 *	@return	
-*		-1 if the stack does'nt exist.
 *		0 if the stack is'nt sorted.
 *		1 if the stack is sorted.
 */
-int	ft_stack_issorted(t_stack *stack)
+int	ft_stack_issorted(t_stack **stack)
 {
-	if (!stack)
-		return (-1);
-	stack = ft_stack_getfirst(stack);
-	while (stack->next)
+	t_stack *node;
+
+	node = ft_stack_getfirst(stack);
+	while (node->next)
 	{
-		if (stack->integer > stack->next->integer)
+		if (node->integer > node->next->integer)
 			return (0);
-		stack = stack->next;
+		node = node->next;
 	}
 	return (1);
 }

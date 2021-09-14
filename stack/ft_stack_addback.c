@@ -15,22 +15,25 @@
 /**
 *	The ft_stack_addback function add a new item to the back of a stack.
 *
-*	@param	t_stack *stack	-	The stack where we'll add the new item.
+*	@param	t_stack **stack	-	The stack where we'll add the new item.
 *
 *	@param	t_stack *add	-	The new item to add in the stack.
 *
 *	@result	Nothing.
 */
-void	ft_stack_addback(t_stack *stack, t_stack *add)
+void	ft_stack_addback(t_stack **stack, t_stack *add)
 {
+	t_stack	*node;
+
 	if (!add)
 		return ;
-	if (!stack)
-		stack = add;
+	node = *stack;
+	if (!node)
+		*stack = add;
 	else
 	{
-		stack = ft_stack_getlast(stack);
-		add->previous = stack;
-		stack->next = add;
+		node = ft_stack_getlast(node);
+		add->previous = node;
+		node->next = add;
 	}
 }

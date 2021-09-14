@@ -48,16 +48,17 @@ typedef struct s_stack
 
 t_stack	*ft_stack_create(int integer);
 void	ft_stack_remove(t_stack **stack);
-t_stack	*ft_stack_getfirst(t_stack *lambda);
-void	ft_stack_addfront(t_stack *stack, t_stack *add);
-void	ft_stack_addback(t_stack *stack, t_stack *add);
+t_stack	*ft_stack_getfirst(t_stack **stack);
+void	ft_stack_addfront(t_stack **stack, t_stack *add);
+void	ft_stack_addback(t_stack **stack, t_stack *add);
 t_stack	*ft_stack_getlast(t_stack *lambda);
-void	ft_stack_dispfrom_f(t_stack *stack);
-int		ft_stack_issorted(t_stack *stack);
+void	ft_stack_dispfrom_f(t_stack **stack);
+int		ft_stack_issorted(t_stack **stack);
 void	ft_stack_clear(t_stack **stack);
-int		ft_stack_size(t_stack *stack);
+int		ft_stack_size(t_stack **stack);
 int		ft_stack_count(t_stack *stack, int integer);
 t_stack	*ft_stack_duplicate(t_stack *stack);
-int		ft_stack_has_dup(t_stack *stack);
+int		ft_stack_has_dup(t_stack **stack);
+void	ft_stack_sort(t_stack **stack);
 
 #endif
