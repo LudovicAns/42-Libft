@@ -15,18 +15,21 @@
 /**
 *	The ft_stack_addfront function add a new item to the front of a stack.
 *
-*	@param	t_stack *stack	-	The stack where we'll add the new item.
+*	@param	t_stack **stack	-	The stack where we'll add the new item.
 *
 *	@param	t_stack *add	-	The new item to add in the stack.
 *
 *	@result	Nothing.
 */
-void	ft_stack_addfront(t_stack *stack, t_stack *add)
+void	ft_stack_addfront(t_stack **stack, t_stack *add)
 {
-	if (!stack || !add)
+	t_stack *node;
+
+	node = *stack;
+	if (!node || !add)
 		return ;
-	while (stack->previous)
-		stack = stack->previous;
-	add->next = stack;
-	stack->previous = add;
+	while (node->previous)
+		node = node->previous;
+	add->next = node;
+	node->previous = add;
 }

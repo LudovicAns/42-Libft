@@ -13,13 +13,36 @@
 #include "libft.h"
 
 /**
- * Need documentation.
+ * The ft_stack_merge function use the merge method. More informations about 
+ * this method by watching the video below:
  * https://www.youtube.com/watch?v=xGl-VBmKr2E&ab_channel=OlivierCuisenaire
- */
+ * 
+ * @param	t_stack *first	-	First side to merge.
+ * 
+ * @param	t_stack *second	-	Second side to merge.
+ * 
+ * @result	Merged stack.
+*/
 static t_stack	*ft_stack_merge(t_stack *first, t_stack *second)
 {
-	(void)first;
-	(void)second;
+	if (!first)
+		return (second);
+	if (!second)
+		return (first);
+	if (first->integer < second->integer)
+	{
+		first->next = ft_stack_merge(first->next, second);
+		first->next->previous = first;
+		first->previous = NULL;
+		return (first);
+	}
+	else
+	{
+		second->next = ft_stack_merge(first, second->next);
+		second->next->previous = second;
+		second->previous = NULL;
+		return (second);
+	}
 }
 
 /**
@@ -36,10 +59,9 @@ static t_stack	*ft_stack_merge(t_stack *first, t_stack *second)
 static t_stack	*ft_stack_split(t_stack *stack)
 {
 	t_stack	*fast;
-	t_stack	*slow;
-	t_stack	*temp;
+	t_stack *slow;
+	t_stack *temp;
 
-	stack = ft_stack_getfirst(stack);
 	fast = stack;
 	slow = stack;
 	while (fast->next && fast->next->next)
@@ -55,15 +77,16 @@ static t_stack	*ft_stack_split(t_stack *stack)
 /**
  * Need documentation.
  */
-void	ft_stack_sort(t_stack *stack)
+void	ft_stack_sort(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
 
-	first = stack;
-	if (!stack || !stack->next)
+	first = *stack;
+	if (!first || !first->next)
 		return ;
 	second = ft_stack_split(first);
-	ft_stack_sort(first);
-	ft_stack_sort(second);
+	ft_stack_sort(&first);
+	ft_stack_sort(&second);
+	*stack = ft_stack_merge(first, second);
 }
