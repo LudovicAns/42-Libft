@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_char.c                                   :+:      :+:    :+:   */
+/*   ft_strjoin_char.c                                   :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,7 +21,7 @@ static char	*char_first(char c)
 
 	str = (char *)malloc(sizeof(char) * 2);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	str[0] = c;
 	str[1] = '\0';
 	return (str);
@@ -41,7 +41,7 @@ char	*ft_strjoin_char(char *str, const char c)
 {
 	int		i;
 	char	*joined;
-	
+
 	if (!c)
 		return (NULL);
 	if (!str)
