@@ -15,15 +15,15 @@
 /**
 *	The ft_stack_getlast function return the last element of a stack.
 *
-*	@param	t_stack *lambda	-	One random item from the stack.
+*	@param	t_stack *stack	-	One node of the stack.
 *
 *	@return	The first item of the stack.
 */
-t_stack	*ft_stack_getlast(t_stack *lambda)
+t_stack	*ft_stack_getlast(t_stack *stack)
 {
-	if (!lambda)
+	if (!stack)
 		return (NULL);
-	while (lambda->next)
-		lambda = lambda->next;
-	return (lambda);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }

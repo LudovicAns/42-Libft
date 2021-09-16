@@ -25,14 +25,11 @@ void	ft_stack_addback(t_stack **stack, t_stack *add)
 {
 	t_stack	*node;
 
-	if (!add)
-		return ;
-	node = *stack;
-	if (!node)
+	if (!*stack)
 		*stack = add;
 	else
 	{
-		node = ft_stack_getlast(node);
+		node = ft_stack_getlast(*stack);
 		add->previous = node;
 		node->next = add;
 	}

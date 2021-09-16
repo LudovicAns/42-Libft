@@ -25,11 +25,12 @@ void	ft_stack_addfront(t_stack **stack, t_stack *add)
 {
 	t_stack *node;
 
-	node = *stack;
-	if (!node || !add)
-		return ;
-	while (node->previous)
-		node = node->previous;
-	add->next = node;
-	node->previous = add;
+	if (!*stack)
+		*stack = add;
+	else
+	{
+		node = ft_stack_getfirst(*stack);
+		add->next = node;
+		node->previous = add;
+	}
 }

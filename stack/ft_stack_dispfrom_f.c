@@ -16,23 +16,27 @@
 *	The ft_stack_dispfrom_f function display a stack in STDOUT starting from 
 *	the first item of the stack.
 *
-*	@param	t_stack **stack	-	A random item from the stack to display.
+*	@param	t_stack *stack	-	A random item from the stack to display.
 *
 *	@result	Nothing.
 */
-void	ft_stack_dispfrom_f(t_stack **stack)
+void	ft_stack_dispfrom_f(t_stack *stack)
 {
-	t_stack	*node;
-
-	node = ft_stack_getfirst(stack);
-	ft_putchar_fd('{', STDOUT);
-	while (node->next)
+	if (!stack)
 	{
-		ft_putnbr_fd(node->integer, STDOUT);
-		ft_putstr_fd(", ", STDOUT);
-		node = node->next;
+	ft_putstr_color_fd(ANSI_COLOR_RED, "Error: Can't disp empty stack\n",
+		STDOUT);
+	return ;
 	}
-	ft_putnbr_fd(node->integer, STDOUT);
+	stack = ft_stack_getfirst(stack);
+	ft_putchar_fd('{', STDOUT);
+	while (stack->next)
+	{
+		ft_putnbr_fd(stack->integer, STDOUT);
+		ft_putstr_fd(", ", STDOUT);
+		stack = stack->next;
+	}
+	ft_putnbr_fd(stack->integer, STDOUT);
 	ft_putchar_fd('}', STDOUT);
 	ft_putchar_fd('\n', STDOUT);
 }
