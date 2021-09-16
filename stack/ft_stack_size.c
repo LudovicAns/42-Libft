@@ -25,7 +25,7 @@ int	ft_stack_size(t_stack **stack)
 	int		count;
 
 	count = 0;
-	node = ft_stack_getfirst(stack);
+	node = ft_stack_getfirst(*stack);
 	while (node)
 	{
 		count++;
