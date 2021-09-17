@@ -25,7 +25,7 @@ int	ft_stack_has_dup(t_stack **stack)
 {
 	t_stack	*node;
 
-	node = ft_stack_getfirst(stack);
+	node = ft_stack_getfirst(*stack);
 	while (node)
 	{
 		if (ft_stack_count(node, node->integer) > 1)

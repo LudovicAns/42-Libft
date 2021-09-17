@@ -15,18 +15,15 @@
 /**
 *	The ft_stack_getfirst function return the first element of a stack.
 *
-*	@param	t_stack **stack	-	Adress of the stack.
+*	@param	t_stack *stack	-	One node of the stack.
 *
 *	@return	The first item of the stack.
 */
-t_stack	*ft_stack_getfirst(t_stack **stack)
+t_stack	*ft_stack_getfirst(t_stack *stack)
 {
-	t_stack	*node;
-
-	node = *stack;
-	if (!node)
+	if (!stack)
 		return (NULL);
-	while (node->previous != NULL)
-		node = node->previous;
-	return (node);
+	while (stack->previous != NULL)
+		stack = stack->previous;
+	return (stack);
 }

@@ -88,5 +88,5 @@ void	ft_stack_sort(t_stack **stack)
 	second = ft_stack_split(first);
 	ft_stack_sort(&first);
 	ft_stack_sort(&second);
-	ft_stack_merge(first, second);
+	*stack = ft_stack_merge(first, second);
 }

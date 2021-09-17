@@ -27,6 +27,9 @@
 # define STDOUT	1
 # define STDERR	2
 
+# define INTMIN -2147483648;
+# define INTMAX 2147483647;
+
 typedef struct s_list
 {
 	void			*content;
