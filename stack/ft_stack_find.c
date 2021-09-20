@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_duplicate.c                               :+:      :+:    :+:   */
+/*   ft_stack_find.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 10:52:38 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/02 10:52:38 by lanselin         ###   ########.fr       */
+/*   Created: 2021/09/19 22:40:20 by lanselin          #+#    #+#             */
+/*   Updated: 2021/09/19 22:40:20 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * The ft_stack_duplicate function duplicate the given stack.
+ * The ft_stack_find function return index value in the given stack for the 
+ * passed integer.
  * 
- * @param	t_stack *stack	-	The stack to duplicate.
+ * @param	t_stack *stack	-	Stack where search.
  * 
- * @result	The duplicate stack or NULL if malloc error.
+ * @param	int integer	-	Searched value.
+ * 
+ * @result	Index value of the integer in given stack or -2147483648 if it 
+ * 			does not exist in the given stack.
  */
-t_stack	*ft_stack_duplicate(t_stack *stack)
+int	ft_stack_find(t_stack *stack, int integer)
 {
-	t_stack *new_stack;
-	t_stack *new_item;
+	int	count;
 
-	new_stack = NULL;
+	count = 0;
+	stack = ft_stack_getfirst(stack);
 	while (stack)
 	{
-		new_item = ft_stack_create(stack->integer);
-		if (!new_item)
-		{
-			ft_stack_clear(&new_stack);
-			return (NULL);
-		}
-		ft_stack_addback(&new_stack, new_item);
+		if (stack->integer == integer)
+			return (count);
 		stack = stack->next;
+		count++;
 	}
-	return (new_stack);
+	return (-2147483648);
 }

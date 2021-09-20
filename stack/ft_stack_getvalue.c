@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_duplicate.c                               :+:      :+:    :+:   */
+/*   ft_stack_getvalue.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 10:52:38 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/02 10:52:38 by lanselin         ###   ########.fr       */
+/*   Created: 2021/09/20 00:42:29 by lanselin          #+#    #+#             */
+/*   Updated: 2021/09/20 00:42:29 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * The ft_stack_duplicate function duplicate the given stack.
+ * The ft_stack_getvalue return the value of the integer at the given index 
+ * in the given stack.
  * 
- * @param	t_stack *stack	-	The stack to duplicate.
+ * @param	t_stack *stack	-	Stack where search.
  * 
- * @result	The duplicate stack or NULL if malloc error.
+ * @param	int	index	-	Index in the stack where look for the value.
+ * 
+ * @result	The integer value contained in the given index.
  */
-t_stack	*ft_stack_duplicate(t_stack *stack)
+int	ft_stack_getvalue(t_stack *stack, int index)
 {
-	t_stack *new_stack;
-	t_stack *new_item;
+	int	i;
 
-	new_stack = NULL;
+	i = 0;
+	//stack = ft_stack_getfirst(stack);
 	while (stack)
 	{
-		new_item = ft_stack_create(stack->integer);
-		if (!new_item)
-		{
-			ft_stack_clear(&new_stack);
-			return (NULL);
-		}
-		ft_stack_addback(&new_stack, new_item);
+		if (i == index)
+			return (stack->integer);
 		stack = stack->next;
-	}
-	return (new_stack);
+		i++;
+	}	
+	return (-2147483648);
 }

@@ -55,12 +55,16 @@ t_stack	*ft_stack_getlast(t_stack *stack);
 void	ft_stack_dispfrom_f(t_stack *stack);
 int		ft_stack_issorted(t_stack **stack);
 void	ft_stack_clear(t_stack **stack);
-int		ft_stack_size(t_stack **stack);
+int		ft_stack_size(t_stack *stack);
 int		ft_stack_count(t_stack *stack, int integer);
 t_stack	*ft_stack_duplicate(t_stack *stack);
 int		ft_stack_has_dup(t_stack **stack);
 void	ft_stack_sort(t_stack **stack);
 int		ft_stack_getmax(t_stack *stack);
 int		ft_stack_getmin(t_stack *stack);
+int		ft_stack_find(t_stack *stack, int integer);
+t_stack	*ft_stack_copy(t_stack *stack);
+int		ft_stack_getvalue(t_stack *stack, int index);
+int		ft_stack_hasbigger(t_stack *stack, int value);
 
 #endif

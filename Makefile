@@ -91,7 +91,11 @@ SRC_STACK	=	$(STACK_DIR)/ft_stack_create.c \
 				$(STACK_DIR)/ft_stack_count.c \
 				$(STACK_DIR)/ft_stack_sort.c \
 				$(STACK_DIR)/ft_stack_getmax.c \
-				$(STACK_DIR)/ft_stack_getmin.c
+				$(STACK_DIR)/ft_stack_getmin.c \
+				$(STACK_DIR)/ft_stack_find.c \
+				$(STACK_DIR)/ft_stack_copy.c \
+				$(STACK_DIR)/ft_stack_getvalue.c \
+				$(STACK_DIR)/ft_stack_hasbigger.c
 OBJ_STACK	=	$(SRC_STACK:.c=.o)
 INC_STACK	=	-I$(STACK_DIR)
 

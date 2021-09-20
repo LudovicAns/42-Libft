@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_duplicate.c                               :+:      :+:    :+:   */
+/*   ft_stack_hasbigger.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 10:52:38 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/02 10:52:38 by lanselin         ###   ########.fr       */
+/*   Created: 2021/09/20 01:36:20 by lanselin          #+#    #+#             */
+/*   Updated: 2021/09/20 01:36:20 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * The ft_stack_duplicate function duplicate the given stack.
+ * The ft_stack_hasbigger check if the given stack cointain a bigger value of 
+ * the given value.
  * 
- * @param	t_stack *stack	-	The stack to duplicate.
+ * @param	t_stack *stack	-	Stack where search.
  * 
- * @result	The duplicate stack or NULL if malloc error.
+ * @param	int value	-	Value to check.
+ * 
+ * @result	1 if the stack contain a bigger value else 0.
  */
-t_stack	*ft_stack_duplicate(t_stack *stack)
+int	ft_stack_hasbigger(t_stack *stack, int value)
 {
-	t_stack *new_stack;
-	t_stack *new_item;
-
-	new_stack = NULL;
 	while (stack)
 	{
-		new_item = ft_stack_create(stack->integer);
-		if (!new_item)
-		{
-			ft_stack_clear(&new_stack);
-			return (NULL);
-		}
-		ft_stack_addback(&new_stack, new_item);
+		if (stack->integer > value)
+			return (1);
 		stack = stack->next;
 	}
-	return (new_stack);
+	return (0);
 }

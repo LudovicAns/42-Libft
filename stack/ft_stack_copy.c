@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_duplicate.c                               :+:      :+:    :+:   */
+/*   ft_stack_copy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 10:52:38 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/02 10:52:38 by lanselin         ###   ########.fr       */
+/*   Created: 2021/09/19 23:21:13 by lanselin          #+#    #+#             */
+/*   Updated: 2021/09/19 23:21:13 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * The ft_stack_duplicate function duplicate the given stack.
+ * The ft_stack_copy function simply copy the given stack.
  * 
- * @param	t_stack *stack	-	The stack to duplicate.
+ * @param	t_stack *stack	-	Stack to copy.
  * 
- * @result	The duplicate stack or NULL if malloc error.
+ * @result	Copied stack.
  */
-t_stack	*ft_stack_duplicate(t_stack *stack)
+t_stack	*ft_stack_copy(t_stack *stack)
 {
-	t_stack *new_stack;
-	t_stack *new_item;
+	t_stack	*copy;
+	t_stack	*new_node;
 
-	new_stack = NULL;
+	copy = NULL;
+	stack = ft_stack_getfirst(stack);
 	while (stack)
 	{
-		new_item = ft_stack_create(stack->integer);
-		if (!new_item)
+		new_node = ft_stack_create(stack->integer);
+		if (!new_node)
 		{
-			ft_stack_clear(&new_stack);
+			ft_stack_clear(&copy);
 			return (NULL);
 		}
-		ft_stack_addback(&new_stack, new_item);
+		ft_stack_addback(&copy, new_node);
 		stack = stack->next;
 	}
-	return (new_stack);
+	return (copy);
 }

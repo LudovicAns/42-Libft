@@ -6,7 +6,7 @@
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 16:42:50 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/17 15:05:16 by lanselin         ###   ########.fr       */
+/*   Updated: 2021/09/20 03:15:11 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int ft_stack_getmin(t_stack *stack)
 {
     int min;
 
-    min = INTMAX;
     stack = ft_stack_getfirst(stack);
+    min = stack->integer;
     while (stack)
     {
         if (stack->integer < min)

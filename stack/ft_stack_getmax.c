@@ -6,7 +6,7 @@
 /*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 16:34:32 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/17 15:05:03 by lanselin         ###   ########.fr       */
+/*   Updated: 2021/09/20 02:33:54 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ft_stack_getmax(t_stack *stack)
 {
     int max;
 
-    max = INTMIN;
+    max = stack->integer;
     stack = ft_stack_getfirst(stack);
     while (stack)
     {

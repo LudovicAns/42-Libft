@@ -15,17 +15,17 @@
 /**	
  * The ft_stack_size function count the number of item in a stack.
  * 
- * @param	t_stack **stack	-	The stack to count.
+ * @param	t_stack *stack	-	The stack to count.
  * 
  * @result	Number of items in the stack.
 */
-int	ft_stack_size(t_stack **stack)
+int	ft_stack_size(t_stack *stack)
 {
 	t_stack	*node;
 	int		count;
 
 	count = 0;
-	node = ft_stack_getfirst(*stack);
+	node = ft_stack_getfirst(stack);
 	while (node)
 	{
 		count++;

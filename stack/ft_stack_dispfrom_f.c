@@ -16,7 +16,7 @@
 *	The ft_stack_dispfrom_f function display a stack in STDOUT starting from 
 *	the first item of the stack.
 *
-*	@param	t_stack **stack	-	A random item from the stack to display.
+*	@param	t_stack *stack	-	A random item from the stack to display.
 *
 *	@result	Nothing.
 */
