@@ -41,4 +41,5 @@ void	ft_stack_remove(t_stack **stack)
 	else
 		*stack = item->next;
 	free(item);
+	item = NULL;
 }
