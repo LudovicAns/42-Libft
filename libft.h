@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "stack.h"
+# include "get_next_line.h"
 
 # define ANSI_COLOR_RED		"\x1b[31m"
 # define ANSI_COLOR_BLUE	"\x1b[34m"

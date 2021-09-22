@@ -100,6 +100,13 @@ SRC_STACK	=	$(STACK_DIR)/ft_stack_create.c \
 OBJ_STACK	=	$(SRC_STACK:.c=.o)
 INC_STACK	=	-I$(STACK_DIR)
 
+# -----  GNL Variables ----- #
+GNL_DIR	=	./gnl
+SRC_GNL	=	$(GNL_DIR)/get_next_line.c \
+			$(GNL_DIR)/get_next_line_utils.c
+OBJ_GNL	=	$(SRC_GNL:.c=.o)
+INC_GNL	=	-I$(GNL_DIR)
+
 # ----- Colors ----- #
 GREEN		=	\e[38;5;118m
 YELLOW		=	\e[38;5;226m
@@ -109,19 +116,20 @@ _INFO		=	[$(YELLOW)INFO$(RESET)]
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJ_STACK)
-	@ ar rc $(NAME) $(OBJ) $(OBJ_STACK)
+$(NAME): $(OBJ) $(OBJ_STACK) $(OBJ_GNL)
+	@ ar rc $(NAME) $(OBJ) $(OBJ_STACK) $(OBJ_GNL)
 	@ ranlib $(NAME)
 	@ printf "$(_SUCCESS) Compilation complete.\n"
 
 %.o: %.c
-	@ $(CC) $(CFLAGS) $(INC) $(INC_STACK) -c $< -o $@
+	@ $(CC) $(CFLAGS) $(INC) $(INC_STACK) $(INC_GNL) -c $< -o $@
 	@ printf '$(_INFO) 🔨 Compiling %s from %s.\n' "$@" "$<"
 
 clean:
 	@ $(RM) $(OBJ)
 	@ $(RM) $(OBJB)
 	@ $(RM) $(OBJ_STACK)
+	@ $(RM) $(OBJ_GNL)
 	@ printf "$(_INFO) Cleaned all object files\n"
 
 fclean: clean
