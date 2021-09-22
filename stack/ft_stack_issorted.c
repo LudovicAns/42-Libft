@@ -25,6 +25,8 @@ int	ft_stack_issorted(t_stack **stack)
 {
 	t_stack *node;
 
+	if (!(*stack))
+		return (0);
 	node = ft_stack_getfirst(*stack);
 	while (node->next)
 	{

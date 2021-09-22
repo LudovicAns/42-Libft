@@ -91,5 +91,6 @@ char				*ft_strjoin_char(char *str, const char c);
 void				ft_swapint(int *a, int *b);
 int					ft_isnormal_int(long long int i);
 int					ft_strcmp(char *s1, char *s2);
+void				ft_lstremove(t_list **list);
 
 #endif

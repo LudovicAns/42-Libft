@@ -72,7 +72,8 @@ SRC			= 	ft_atoi.c \
 				ft_strjoin_char.c \
 				ft_swapint.c \
 				ft_isnormal_int.c \
-				ft_strcmp.c
+				ft_strcmp.c \
+				ft_lstremove.c
 INC			=	-I.
 
 # -----  Stack Variables ----- #
