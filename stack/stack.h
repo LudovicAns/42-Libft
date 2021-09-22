@@ -66,5 +66,6 @@ int		ft_stack_find(t_stack *stack, int integer);
 t_stack	*ft_stack_copy(t_stack *stack);
 int		ft_stack_getvalue(t_stack *stack, int index);
 int		ft_stack_hasbigger(t_stack *stack, int value);
+int		ft_stack_contain(t_stack *stack, int integer);
 
 #endif
