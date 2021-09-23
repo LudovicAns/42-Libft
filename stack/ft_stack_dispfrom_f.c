@@ -24,9 +24,9 @@ void	ft_stack_dispfrom_f(t_stack *stack)
 {
 	if (!stack)
 	{
-	ft_putstr_color_fd(ANSI_COLOR_RED, "Error: Can't disp empty stack\n",
-		STDOUT);
-	return ;
+		ft_putstr_color_fd(ANSI_COLOR_RED, "Error: Can't disp empty stack\n",
+			STDOUT);
+		return ;
 	}
 	stack = ft_stack_getfirst(stack);
 	ft_putchar_fd('{', STDOUT);

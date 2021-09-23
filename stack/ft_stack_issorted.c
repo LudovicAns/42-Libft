@@ -23,7 +23,7 @@
 */
 int	ft_stack_issorted(t_stack **stack)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	if (!(*stack))
 		return (0);

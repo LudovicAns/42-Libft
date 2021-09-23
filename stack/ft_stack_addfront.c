@@ -23,7 +23,7 @@
 */
 void	ft_stack_addfront(t_stack **stack, t_stack *add)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = *stack;
 	if (node)

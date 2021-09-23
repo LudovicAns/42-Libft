@@ -21,8 +21,8 @@
  */
 t_stack	*ft_stack_duplicate(t_stack *stack)
 {
-	t_stack *new_stack;
-	t_stack *new_item;
+	t_stack	*new_stack;
+	t_stack	*new_item;
 
 	new_stack = NULL;
 	while (stack)

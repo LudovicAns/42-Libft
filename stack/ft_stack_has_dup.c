@@ -20,7 +20,7 @@
  * 
  * @return	0 if stack has not duplicate integer value else 1.
  *
- */ 
+ */
 int	ft_stack_has_dup(t_stack **stack)
 {
 	t_stack	*node;

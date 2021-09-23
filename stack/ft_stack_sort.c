@@ -59,8 +59,8 @@ static t_stack	*ft_stack_merge(t_stack *first, t_stack *second)
 static t_stack	*ft_stack_split(t_stack *stack)
 {
 	t_stack	*fast;
-	t_stack *slow;
-	t_stack *temp;
+	t_stack	*slow;
+	t_stack	*temp;
 
 	fast = stack;
 	slow = stack;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_getmin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lanselin <lanselin@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lanselin <lanselin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 16:42:50 by lanselin          #+#    #+#             */
-/*   Updated: 2021/09/20 03:15:11 by lanselin         ###   ########.fr       */
+/*   Updated: 2021/09/23 15:45:31 by lanselin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
  * 
  * @result  Lowest int inside the stack.
  */
-int ft_stack_getmin(t_stack *stack)
+int	ft_stack_getmin(t_stack *stack)
 {
-    int min;
+	int	min;
 
-    stack = ft_stack_getfirst(stack);
-    min = stack->integer;
-    while (stack)
-    {
-        if (stack->integer < min)
-            min = stack->integer;
-        stack = stack->next;
-    }
-    return (min);
+	stack = ft_stack_getfirst(stack);
+	min = stack->integer;
+	while (stack)
+	{
+		if (stack->integer < min)
+			min = stack->integer;
+		stack = stack->next;
+	}
+	return (min);
 }

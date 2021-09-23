@@ -27,7 +27,6 @@ int	ft_stack_getvalue(t_stack *stack, int index)
 	int	i;
 
 	i = 0;
-	//stack = ft_stack_getfirst(stack);
 	while (stack)
 	{
 		if (i == index)
