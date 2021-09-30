@@ -21,6 +21,8 @@
 */
 int	ft_str_isnumeric(char *str)
 {
+	if (*str == '-')
+		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
